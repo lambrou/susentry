@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# To call this script: sudo readonly.sh /path/to/susentry/dir/
+# To call this script: sudo ./makeroot.sh /path/to/susentry/dir/
 
 # First, make the owner of the entire susentry directory root.
 # the -R flag makes it so it will recursively set every file and folder in this
