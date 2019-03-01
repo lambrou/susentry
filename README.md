@@ -25,11 +25,11 @@ $ sudo apt-get install python3-numpy
 |-susentry(dir)      
 | |_images(dir)_
 | |_unknownimages(dir)_
-| |_makeroot.sh_
-| |_susentry.py_
-| |_config.yml_
-| |_dlib_face_recognition_resnet_model_v1.dat_
-| |_shape_predictor_5_face_landmarks.dat_
-| |_LICENSE
+|_makeroot.sh_
+|_susentry.py_
+|_config.yml_
+|_dlib_face_recognition_resnet_model_v1.dat_
+|_shape_predictor_5_face_landmarks.dat_
+|_LICENSE
 ```
 ### This README is incomplete. This line will be removed when it is finished.
