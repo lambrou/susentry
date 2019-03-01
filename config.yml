@@ -1,0 +1,27 @@
+# YAML Config File for SUSENTRY
+# This file must be given root permissions for security. Check out the 
+# documentation for more info.
+
+# Verbose, True or False. Leave True if you want to see the new
+# and comparison images pop up during recognition
+verbose: True
+
+# Choose the working directory of susentry. This is the directory your config
+# file. Recommended: Something like "/home/<username>/susentry/" Make sure to
+# include the final / and it must be entered as a string. (In quotes "")
+working directory:
+
+# Path to your file, courtesy of dlib
+predictor path: 
+
+# Path to your face recognition model file, courtesy of dlib
+face recognition model path:
+
+# Path to your known faces folder. Recommended: "/home/<username>/susentry/images/"
+# During facial comparison, the program will iterate through all images in the
+# known faces folder and compare with the new image.
+known faces folder path:
+
+# Path to your unknown faces folder. Recommended "/home/<username>/susentry/unknownimages/
+# These images are the unknown images we are given to scan.
+unknown faces folder path: 
