@@ -91,9 +91,6 @@ def get_face_desc(image):
         # middle value, such as 10, which is only 10x slower but still gets an
         # LFW accuracy of 99.3%.
 
-
-        dlib.hit_enter_to_continue()
-
 # Here we use OpenCV to read an image from the camera, save it to a file, and
 # return the path to the file. The argument known is a boolean type value.
 # getimage(True) - Captures an image and saves it to the known faces folder
@@ -139,9 +136,10 @@ def login_check():
 
     return result < threshold
 
+# Take the user's args and execute accordingly.
 if len(sys.argv) > 1:
     if sys.argv[1] == "-l":
-        if login_check() == False:
+        if not login_check:
             print("Failed to get a matching face value. Exiting with Error Code 1...")
             sys.exit(1)  # Return exit code 1 if the facial recognition fails
         print("Face Value Accepted")
@@ -149,6 +147,6 @@ if len(sys.argv) > 1:
     elif sys.argv[1] != "-l":
         print("Wrong argument given: {}".format(sys.argv[1]))
         print("Use -l for facial comparison check, give no arguments for adding a new known image")
-
-newimg = getimage(True)
-print("{} Saved!".format(newimg))
+elif len(sys.argv) <= 1:
+    newimg = getimage(True)
+    print("{} Saved!".format(newimg))
