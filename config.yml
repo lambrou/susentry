@@ -4,7 +4,7 @@
 
 # Verbose, True or False. Leave True if you want to see the new
 # and comparison images pop up during recognition
-verbose: True
+verbose: False
 
 # Choose the working directory of susentry. This is the directory your config
 # file. Recommended: Something like "/home/<username>/susentry/" Make sure to
