@@ -86,4 +86,9 @@ Open a new terminal and type:
 `sudo test`
 
 
+
+## Please note:
+### - Bright lights in the background, or blurry images will usually fail facial comparison.
+
+
 ### This README is incomplete. This line will be removed when it is finished.
