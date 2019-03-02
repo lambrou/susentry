@@ -139,7 +139,7 @@ def login_check():
 # Take the user's args and execute accordingly.
 if len(sys.argv) > 1:
     if sys.argv[1] == "-l":
-        if not login_check:
+        if not login_check():
             print("Failed to get a matching face value. Exiting with Error Code 1...")
             sys.exit(1)  # Return exit code 1 if the facial recognition fails
         print("Face Value Accepted")
