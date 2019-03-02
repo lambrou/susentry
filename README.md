@@ -24,26 +24,29 @@ $ sudo apt-get install python3-numpy
 ##### Folder Structure
 ```
 |-susentry(dir)      
-| |_images(dir)_
-| |_unknownimages(dir)_
-|_makeroot.sh_
-|_susentry.py_
-|_config.yml_
-|_dlib_face_recognition_resnet_model_v1.dat_
-|_shape_predictor_5_face_landmarks.dat_
+| |_images
+| |_unknownimages
+|_susentry.py
+|_config.yml
+|_dlib_face_recognition_resnet_model_v1.dat
+|_shape_predictor_5_face_landmarks.dat
 |_LICENSE
 ```
+
 ### Editing the Config File
 
 The config file is in YAML and comes without any of the values filled in.
 You can set Verbose to True or False (No quotes - do not pass True or False as a string, only the folder paths are strings) 
-If verbose is True you can see the facial recognition in action, if set to False, everything happens quietly in the background.
+If Verbose is True you can see the facial recognition in action, if set to False, everything happens quietly in the background.
 Change the working directory to where you store the files. Example: "/home/user/susentry" (Include the quotations)
-The rest of the values are the paths to the files including in the repository.
+The rest of the values are the paths to the files included in the repository.
 
 ### First run
 
-Run susentry.py once without any arguments (python3 susentry.py). It will take an image of your face and save it to the 'known' images folder. This is the picture the sudoers face will be compared against. (If you run susentry.py with the -l arg it does a facial comparison) 
+Run susentry.py once without any arguments (python3 susentry.py). It will take an image of your face and save it to the 'known' images folder. This is the picture the sudoers face will be compared against. (If you run susentry.py with the -l arg it does a facial comparison) You can add as many pictures as you want - all images in the known images folder will be iterated through until either
+1) A match is found
+or
+2) All images have been checked and no match is found (in which case the login will fall back to the password method, and the picture of the failed facial recognition will be saved in the unknown images folder)
 
 It is important that you do this step before proceeding below.
 
