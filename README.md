@@ -93,6 +93,6 @@ Open a new terminal and type:
 
 ## Please note:
 ### - Bright lights in the background, or blurry images will usually fail facial comparison.
+### - By no means is this more secure than your password. If someone held up a clear enough picture of you, it would pass the facial recognition. 
+### - The files in the 'known' images folder can easily be edited without root priveleges. Fixing this is on the first of my to-do list.
 
-
-### This README is incomplete. This line will be removed when it is finished.
