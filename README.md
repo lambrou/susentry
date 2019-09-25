@@ -1,4 +1,4 @@
-# susentry
+# SuSentry
 Linux Facial Recognition for using Su/Sudo, written in Python 3 using dlib and OpenCV 3
 
 # Requirements
