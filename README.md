@@ -9,10 +9,10 @@ Linux Facial Recognition for using Su/Sudo, written in Python 3 using dlib and O
 - YAML
 
 ##### Installing dlib: 
-https://www.pyimagesearch.com/2018/01/22/install-dlib-easy-complete-guide/ 
+https://www.learnopencv.com/install-dlib-on-ubuntu/
 
 ##### Installing OpenCV
-https://www.learnopencv.com/install-opencv3-on-ubuntu/$
+https://docs.opencv.org/3.4/d2/de6/tutorial_py_setup_in_ubuntu.html
 
 ##### YAML, Numpy
 ```
