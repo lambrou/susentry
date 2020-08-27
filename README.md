@@ -74,8 +74,9 @@ Find this line:
 python3 /path/to/susentry.py -l
 ```
 And change `/path/to/susentry.py` to the full path of your susentry.py python file.
-
+##### Note:
 You may have to change the following line to `export DISPLAY=:1.0` if you receive exit code 13 when attempting to log in.
+
 ```export DISPLAY=:0.0```
 
 Then, place this file in /usr/local/bin folder.
