@@ -35,18 +35,25 @@ $ sudo apt-get install python3-numpy
 ### Editing the Config File
 
 The config file is in YAML and comes without any of the values filled in.
-You can set Verbose to True or False (No quotes - do not pass True or False as a string, only the folder paths are strings) 
+You can set Verbose to True or False (No quotes, only the folder paths are strings) 
 If Verbose is True you can see the facial recognition in action, if set to False, everything happens quietly in the background.
 Change the working directory to where you store the files. Example: "/home/user/susentry" (Include the quotations)
 The rest of the values are the paths to the files included in the repository.
 
 ### First run
 
-Run susentry.py once without any arguments (python3 susentry.py). It will take an image of your face and save it to the 'known' images folder. This is the picture the sudoers face will be compared against. (If you run susentry.py with the -l arg it does a facial comparison) You can add as many pictures as you want - all images in the known images folder will be iterated through until either
+Run susentry.py once without any arguments: 
+```
+python3 susentry.py
+```
+
+It will take an image of your face and save it to the 'known' images folder. This is the picture the sudoers face will be compared against. 
+You can add as many pictures as you want - all images in the known images folder will be iterated through until either
 1) A match is found
 or
 2) All images have been checked and no match is found (in which case the login will fall back to the password method, and the picture of the failed facial recognition will be saved in the unknown images folder)
 
+This means that you can choose to have more than one person access the same computer using facial recognition.
 It is important that you do this step before proceeding below.
 
 ### Editing /etc/pam.d/common-auth 
@@ -55,7 +62,8 @@ We will be using Linux-PAM (Pluggable Authentication Modules) to call our script
 For those unfamiliar with PAM, you can learn more about PAM here:
 http://www.linux-pam.org/Linux-PAM-html/
 
-#### *** WARNING *** The file we are going to be editing is /etc/pam.d/common-auth Modifying these files is not to be taken lightly and if you do something incorrectly you may have to log in to single user mode and gain root priveleges to revert the common-auth file back.
+#### *** WARNING *** The file we are going to be editing is /etc/pam.d/common-auth 
+##### Modifying these files is not to be taken lightly and if you do something incorrectly you may have to log in to single user mode and gain root priveleges to revert the common-auth file back.
 Lets get started!
 
 First, we want to place a bash script in our /usr/local/bin/ folder. This script is named 'susentry' and is located in this repository.
@@ -83,6 +91,7 @@ auth [success=2 default=ignore]     pam_exec.so debug log=/path/to/pamlogs.txt /
 ```
 Make sure you change `/path/to/pamlogs.txt` to where you want the PAM output to be saved. (This ouput is error output and stdin output from susentry and susentry.py - if you set Verbose to True that printed information will show up here)
 
+
 ## Try it out!
 
 Open a new terminal and type:
@@ -93,5 +102,4 @@ Open a new terminal and type:
 ## Please note:
 ### - Bright lights in the background, or blurry images will usually fail facial comparison.
 ### - By no means is this more secure than your password. If someone held up a clear enough picture of you, it would pass the facial recognition. 
-### - The files in the 'known' images folder can easily be edited without root priveleges. Fixing this is on the first of my to-do list.
 
