@@ -2,6 +2,8 @@
 
 # You must change the value /path/to/susentry.py to the path of your
 # susentry.py python file.
+
+# You may have to change this line to export DISPLAY=:1.0 if you receive exit code 13
 export DISPLAY=:0.0
 xhost +local:
 python3 /path/to/susentry.py -l
