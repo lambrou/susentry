@@ -108,7 +108,7 @@ auth [success=2 default=ignore]     pam_exec.so debug log=/path/to/pamlogs.txt /
 
 Make sure you change `/path/to/pamlogs.txt` to where you want the PAM output to be saved. (This ouput is error output and stdin output from susentry and susentry.py - if you set Verbose to True that printed information will show up here)
 
-Here is an example of a common-auth file on Ubuntu 20.04.1 LTS
+Here is an example of a common-auth file with these changes on Ubuntu 20.04.1 LTS
 ```
 #
 # /etc/pam.d/common-auth - authentication settings common to all services
