@@ -66,8 +66,7 @@ For those unfamiliar with PAM, you can learn more about PAM here:
 http://www.linux-pam.org/Linux-PAM-html/
 
 #### *** WARNING *** The file we are going to be editing is /etc/pam.d/common-auth 
-##### Modifying these files is not to be taken lightly and if you do something incorrectly you may have to log in to single user mode and gain root priveleges to revert the common-auth file back.
-Lets get started!
+##### Modifying these files is not to be taken lightly and if you do something incorrectly you may have to log in to single user mode and gain root priveleges to revert the common-auth file back. Do not add any unnecessary empty lines to the file.
 
 First, we want to place a bash script in our /usr/local/bin/ folder. This script is named 'susentry' and is located in this repository.
 Find this line:
