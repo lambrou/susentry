@@ -9,15 +9,18 @@ Linux Facial Recognition for using Su/Sudo, written in Python 3 using dlib and O
 - YAML
 
 ##### Installing dlib: 
-https://www.learnopencv.com/install-dlib-on-ubuntu/
+```
+pip3 install dlib
+```
 
 ##### Installing OpenCV
-https://docs.opencv.org/3.4/d2/de6/tutorial_py_setup_in_ubuntu.html
-
+```
+pip3 install opencv-contrib-python
+```
 ##### YAML, Numpy
 ```
-$ sudo apt-get install python3-yaml
-$ sudo apt-get install python3-numpy
+pip3 install pyyaml
+pip3 install numpy
 ```
 
 ##### Folder Structure
@@ -77,7 +80,7 @@ Then, place this file in /usr/local/bin folder.
 Next, we modify the PAM common-auth file:
 
 ```
-gksudo gedit /etc/pam.d/common-auth
+sudo -i gedit /etc/pam.d/common-auth
 ```
 Find this line in your common-auth file:
 ```
