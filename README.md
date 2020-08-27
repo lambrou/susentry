@@ -77,23 +77,67 @@ python3 /path/to/susentry.py -l
 And change `/path/to/susentry.py` to the full path of your susentry.py python file.
 Then, place this file in /usr/local/bin folder.
 
+```
+sudo cp susentry /usr/local/bin/susentry
+```
+
+We will need to make this file an executable.
+
+```
+sudo chmod +x /usr/local/bin/susentry
+```
+
 Next, we modify the PAM common-auth file:
 
 ```
 sudo -i gedit /etc/pam.d/common-auth
 ```
+
 Find this line in your common-auth file:
+
 ```
 auth [success=1 default=ignore]     pam_unix.so nullok_secure
 ```
 
 This line calls the module that asks the user for a password. If the module returns success (password correct), it skips the next line (success=1 means skip one line). 
 So, if you want to use su/sudo, but instead of entering your password you use facial comparison, put this above the line above:
+
 ```
 auth [success=2 default=ignore]     pam_exec.so debug log=/path/to/pamlogs.txt /usr/local/bin/susentry
 ```
+
 Make sure you change `/path/to/pamlogs.txt` to where you want the PAM output to be saved. (This ouput is error output and stdin output from susentry and susentry.py - if you set Verbose to True that printed information will show up here)
 
+Here is an example of a common-auth file on Ubuntu 20.04.1 LTS
+```
+#
+# /etc/pam.d/common-auth - authentication settings common to all services
+#
+# This file is included from other service-specific PAM config files,
+# and should contain a list of the authentication modules that define
+# the central authentication scheme for use on the system
+# (e.g., /etc/shadow, LDAP, Kerberos, etc.).  The default is to use the
+# traditional Unix authentication mechanisms.
+#
+# As of pam 1.0.1-6, this file is managed by pam-auth-update by default.
+# To take advantage of this, it is recommended that you configure any
+# local modules either before or after the default block, and use
+# pam-auth-update to manage selection of other modules.  See
+# pam-auth-update(8) for details.
+
+# here are the per-package modules (the "Primary" block)
+auth [success=2 default=ignore]     pam_exec.so debug log=/home/user/susentry/pamlogs.txt /usr/local/bin/susentry
+auth	[success=1 default=ignore]	pam_unix.so nullok_secure
+# here's the fallback if no module succeeds
+auth	requisite			pam_deny.so
+# prime the stack with a positive return value if there isn't one already;
+# this avoids us returning an error just because nothing sets a success code
+# since the modules above will each just jump around
+auth	required			pam_permit.so
+# and here are more per-package modules (the "Additional" block)
+auth	optional			pam_cap.so 
+# end of pam-auth-update config
+```
 
 ## Try it out!
 
