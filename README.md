@@ -1,6 +1,23 @@
 # SuSentry
 Linux Facial Recognition for using Su/Sudo, written in Python 3 using dlib and OpenCV 3
 
+# Table of Contents
+   * [SuSentry](#susentry)
+   * [Requirements](#requirements)
+        * [dlib](#installing-dlib)
+        * [OpenCV](#installing-opencv)
+        * [YAML, Numpy](#yaml-numpy)
+    * [Setup](#setup)
+      * [Folder Structure](#folder-structure)
+      * [Editing the Config File](#editing-the-config-file)
+      * [First run](#first-run)
+      * [Editing /etc/pam.d/common-auth](#editing-etcpamdcommon-auth)
+    * [Try it](#try-it-out)
+    * [Considerations](#please-note)
+
+
+
+
 # Requirements
 - Python 3+
 - dlib with Python 3 bindings
@@ -34,6 +51,7 @@ pip3 install numpy
 |_shape_predictor_5_face_landmarks.dat
 |_LICENSE
 ```
+# Setup
 
 ### Editing the Config File
 
