@@ -37,11 +37,43 @@ pip3 install numpy
 
 ### Editing the Config File
 
-The config file is in YAML and comes without any of the values filled in.
-You can set Verbose to True or False (No quotes, only the folder paths are strings) 
-If Verbose is True you can see the facial recognition in action, if set to False, everything happens quietly in the background.
-Change the working directory to where you store the files. Example: "/home/user/susentry" (Include the quotations)
+The config file is in YAML and comes without any of the values filled in.\
+You can set Verbose to True or False (No quotes, only the folder paths are strings)\
+If Verbose is True you can see the facial recognition in action, if set to False, everything happens quietly in the background.\
+Change the working directory to where you store the files. Example: "/home/user/susentry" (Include the quotations)\
 The rest of the values are the paths to the files included in the repository.
+
+#### config.yml example
+```
+# YAML Config File for SUSENTRY
+# This file must be given root permissions for security. Check out the 
+# documentation for more info.
+
+# Verbose, True or False. Set to True if you want to see the new
+# and comparison images pop up during recognition. If you set this
+# to True, it will not work on the log in screen, only on su/sudo
+verbose: True
+
+# Choose the working directory of susentry. This is the directory your config
+# file. Recommended: Something like "/home/<username>/susentry/" Make sure to
+# include the final / and it must be entered as a string. (In quotes "")
+working directory: "/home/user/susentry/"
+
+# Path to your file, courtesy of dlib
+predictor path: "/home/user/susentry/shape_predictor_5_face_landmarks.dat"
+
+# Path to your face recognition model file, courtesy of dlib
+face recognition model path: "/home/user/susentry/dlib_face_recognition_resnet_model_v1.dat"
+
+# Path to your known faces folder. Recommended: "/home/<username>/susentry/images/"
+# During facial comparison, the program will iterate through all images in the
+# known faces folder and compare with the new image.
+known faces folder path: "/home/user/susentry/images/"
+
+# Path to your unknown faces folder. Recommended "/home/<username>/susentry/unknownimages/
+# These images are the unknown images we are given to scan.
+unknown faces folder path: "/home/user/susentry/unknownimages/"
+```
 
 ### First run
 
