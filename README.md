@@ -4,16 +4,16 @@ Linux Facial Recognition for using Su/Sudo, written in Python 3 using dlib and O
 # Table of Contents
    * [SuSentry](#susentry)
    * [Requirements](#requirements)
-        * [dlib](#installing-dlib)
-        * [OpenCV](#installing-opencv)
-        * [YAML, Numpy](#yaml-numpy)
-    * [Setup](#setup)
-      * [Folder Structure](#folder-structure)
-      * [Editing the Config File](#editing-the-config-file)
-      * [First run](#first-run)
-      * [Editing /etc/pam.d/common-auth](#editing-etcpamdcommon-auth)
-    * [Try it](#try-it-out)
-    * [Considerations](#please-note)
+     * [dlib](#installing-dlib)
+     * [OpenCV](#installing-opencv)
+     * [YAML, Numpy](#yaml-numpy)
+   * [Setup](#setup)
+     * [Folder Structure](#folder-structure)
+     * [Editing the Config File](#editing-the-config-file)
+     * [First run](#first-run)
+     * [Editing /etc/pam.d/common-auth](#editing-etcpamdcommon-auth)
+   * [Try it](#try-it-out)
+   * [Considerations](#please-note)
 
 
 
