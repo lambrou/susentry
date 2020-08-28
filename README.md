@@ -40,6 +40,9 @@ pip3 install pyyaml
 pip3 install numpy
 ```
 
+# Setup
+
+
 ##### Folder Structure
 ```
 |-susentry(dir)      
@@ -51,7 +54,6 @@ pip3 install numpy
 |_shape_predictor_5_face_landmarks.dat
 |_LICENSE
 ```
-# Setup
 
 ### Editing the Config File
 
